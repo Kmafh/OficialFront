@@ -1,0 +1,29 @@
+<mat-card class="oh text-center little-profile">
+    <img mat-card-image src="{{fondoUrl}}" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+        <div class="pro-img">
+            <img [src]=imgUrl width="100" alt="user" class="img-circle">
+        </div>
+        <h3 class="m-b-0"> {{user.name }} </h3>
+        <h6 class="m-t-0 "> {{user.email}} </h6>
+        <mat-card-actions class="db">
+            <!-- <button mat-raised-button color="primary" (click)="openBottomSheet()">Actualizar</button> -->
+            <button mat-raised-button color="primary" (click)="routerProfile()">Ver perfil</button>
+            
+        </mat-card-actions>
+        <div class="row m-t-30">
+            <div class="col-4">
+                <h3 class="m-0 font-light">{{balance}}<small>€</small></h3>
+                <small>Balance</small>
+            </div>
+            <div class="col-4">
+                <h3 class="m-0 font-light">{{cantFinnish}}</h3>
+                <small>Huchas</small>
+            </div>
+            <div class="col-4">
+                <h3 class="m-0 font-light">6035</h3>
+                <small>Fallower</small>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

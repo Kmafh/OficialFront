@@ -1,0 +1,46 @@
+.demo-table {
+    width: 100%;
+  }
+  
+  .mat-mdc-row .mat-mdc-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+  
+  .mat-mdc-row:hover .mat-mdc-cell {
+    background: #eef9f7;
+
+  }
+  
+  .demo-row-is-clicked {
+    font-weight: bold;
+  }
+
+  .fila-sin-time {
+    background-color: #f5f5f5; /* Color de fondo para filas sin time */
+  }
+
+  .custom-mat-form-field .mat-form-field-wrapper {
+    background-color: red; /* Cambia el color de fondo según tus preferencias */
+  }
+  
+  .custom-mat-form-field .mat-form-field-underline {
+    background-color: red; /* Cambia el color del subrayado si es necesario */
+  }
+  .mat-column-img {
+    width: 32px;
+    padding-right: 24px;
+    text-align: center;
+  }
+  
+  .mat-column-text {
+    padding-left: 16px;
+    font-size: 20px;
+  }
+
+  .mat-column-option {
+    width: 32px;
+    padding-right: 24px;
+    text-align: center;
+  }

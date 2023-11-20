@@ -1,0 +1,95 @@
+<mat-card>
+  <mat-card-content>
+    <div>
+      <apx-chart
+        [series]="VisitorChartOptions.series"
+        [chart]="VisitorChartOptions.chart"
+        [labels]="VisitorChartOptions.labels"
+        [responsive]="VisitorChartOptions.responsive"
+        [tooltip]="VisitorChartOptions.tooltip"
+        [legend]="VisitorChartOptions.legend"
+        [colors]="VisitorChartOptions.colors"
+        [dataLabels]="VisitorChartOptions.dataLabels"
+        [plotOptions]="VisitorChartOptions.plotOptions"
+        [stroke]="VisitorChartOptions.stroke"
+      >
+      </apx-chart>
+    </div>
+  </mat-card-content>
+  <hr />
+  <mat-card-content>
+    <div class="row ">
+      <div class="col-6 text-verde_3">
+        <h6 class="text-verde m-0">
+          Actual:
+        </h6>
+      </div>
+      <div class="col-6 text-verde_3 text-center">
+        <h6 class="text-verde m-0">
+          {{ pro.actual | currency : "EUR" }}
+        </h6>
+      </div>
+        <div class="col-6 text-verde_3">
+          <h6 class="text-verde m-0">
+            Objetivo:
+          </h6>
+        </div>
+        <div class="col-6 text-verde_3 text-center">
+          <h6 class="text-verde m-0">
+            {{ pro.cantObjetivo | currency : "EUR" }}
+          </h6>
+        </div>
+        <div class="col-6 text-verde_3">
+          <h6 class="text-verde m-0">
+            Fecha Obj. :
+          </h6>
+        </div>
+        <div class="col-6 text-verde_3 text-center">
+          <h6 class="text-verde m-0">
+            {{ pro.finishAt | date }}
+          </h6>
+        </div>
+          <div class="col-6 text-verde_3">
+            <h6 class="text-verde m-0">
+             Estilo:
+            </h6>
+          </div>
+          <div class="col-6 text-verde_3 text-center">
+            <h6 class="text-verde m-0">
+              {{ pro.tipe }}
+            </h6>
+          </div>
+            <div class="col-6 text-verde_3">
+              <h6 class="text-verde m-0">
+                Creado:
+              </h6>
+            </div>
+            <div class="col-6 text-verde_3 text-center">
+              <h6 class="text-verde m-0">
+                {{ pro.createAt | date  }}
+              </h6>
+            </div>
+              
+    </div>
+    
+  </mat-card-content>
+</mat-card>
+<div  style="margin-top: 10px;">
+  <mat-expansion-panel [expanded]="isExpanded"  class="flat-panel">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <a (click)="toggleExpansion()" class="text-verde_3">
+           Movimientos 
+        </a>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="row" *ngFor="let mov of movs">
+      <div class="col-6">{{mov.cant.toString() | currency : "EUR"}}</div>
+      <div class="col-6">{{mov.createAt  | date }}</div>
+    </div>
+    <!-- <app-table-movements></app-table-movements> -->
+  </mat-expansion-panel>
+  
+  
+  
+  </div>

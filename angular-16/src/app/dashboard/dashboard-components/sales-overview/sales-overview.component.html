@@ -1,0 +1,46 @@
+<mat-card>
+  <mat-card-content>
+    <div class="d-flex flex-wrap">
+      <div>
+        <mat-card-title>Movimientos</mat-card-title>
+        <mat-card-subtitle>Movimientos realizados por meses</mat-card-subtitle>
+      </div>
+      <div class="ml-auto">
+        <ul class="list-inline">
+          <li>
+            <h6 class="text-verde_2 m-0">
+              <i class="mdi mdi-checkbox-blank-circle font-10 m-r-10"></i>Ingresos
+            </h6>
+          </li>
+          <li>
+            <h6 class="text-verde_3 m-0">
+              <i class="mdi mdi-checkbox-blank-circle font-10 m-r-10"></i>Gastos
+            </h6>
+          </li>
+          <li>
+            <h6 class="text-verde_1 m-0">
+              <i class="mdi mdi-checkbox-blank-circle font-10 m-r-10"></i>Ahorros
+            </h6>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <apx-chart
+        [series]="chartOptions.series"
+        [chart]="chartOptions.chart"
+        [dataLabels]="chartOptions.dataLabels"
+        [plotOptions]="chartOptions.plotOptions"
+        [yaxis]="chartOptions.yaxis"
+        [legend]="chartOptions.legend"
+        [fill]="chartOptions.fill"
+        [stroke]="chartOptions.stroke"
+        [tooltip]="chartOptions.tooltip"
+        [xaxis]="chartOptions.xaxis"
+        [grid]="chartOptions.grid"
+      >
+      </apx-chart>
+    </div>
+  </mat-card-content>
+</mat-card>

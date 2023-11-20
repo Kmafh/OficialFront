@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-12 text-primary" *ngIf="!pag">
+    <mat-card-content>
+      <button mat-raised-button [matMenuTriggerFor]="menu" color="primary" >
+        <mat-icon>add</mat-icon> Nuevo
+      </button>
+      <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="openDialog()">Ingreso/Gasto</button>
+          <button mat-menu-item (click)="openDialogPro()">Proyecto</button>
+      </mat-menu>
+    &nbsp;
+      <button mat-button color="accent">
+        <mat-icon>picture_as_pdf</mat-icon>
+      </button>
+    </mat-card-content>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12 text-primary">
+    <mat-tab-group>
+      <mat-tab label="Gráficos">
+        <mat-card-content>
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <app-our-visiter></app-our-visiter>
+            </div>
+            <div class="col-md-8">
+              <app-sales-overview></app-sales-overview>
+            </div>
+          </div>
+        </mat-card-content>
+        <div class="col-12 text-primary">
+          <app-table-gestion></app-table-gestion>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Proyectos">
+        <mat-card-content>
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <app-grafico-pro></app-grafico-pro>
+            </div>
+            <div class="col-md-8">
+              <app-table-projects></app-table-projects>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

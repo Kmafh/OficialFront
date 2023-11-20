@@ -1,0 +1,30 @@
+<mat-card class="oh text-center little-profile" style="width: 500px">
+    <img
+            mat-card-image
+            src="assets/images/background/piggy.png"
+            alt="Photo of a Shiba Inu"
+            style="height: 30px; margin-bottom: 70px"
+          />
+    <mat-card-content>
+      <div class="pro-img">
+        <a
+          matTooltip="Cambiar imagen"
+          aria-label="Button that displays a tooltip when focused or hovered over"
+          ><img src="../{{data.row.img}}" alt="user" class="img-circle up"
+        /></a>
+      </div>
+      <form class="example-form" style="padding: 10px" [formGroup]="form">
+        <div class="row">
+          <div class="col-12">
+            <mat-form-field>
+              <mat-label>Cant. €</mat-label>
+              <input matInput type="number" formControlName="cant" disable />
+            </mat-form-field>
+          </div>
+          
+        </div>
+        <button mat-raised-button color="warn" (click)="setAporte()">Aceptar</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  

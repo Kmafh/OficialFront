@@ -1,0 +1,51 @@
+<mat-card class="oh text-center little-profile">
+  <!-- <img mat-card-image src="assets/images/background/user-info.jpg" alt="Photo of a Shiba Inu"> -->
+  <mat-card-content>
+    <div class="example-container">
+      <!-- (ngSubmit)="login()" -->
+      <mat-tab-group>
+        <mat-tab label="Personal">
+          <div class="row" style="width: 90%;">
+            <div class="col-md-6">
+              <form action="" [formGroup]="form" class="form-centrado">
+                <mat-form-field style="padding-top: 30px">
+                  <mat-select
+                    appearance="standard"
+                    formControlName="role"
+                    required
+                  >
+                    <mat-option>-- None --</mat-option>
+                    <mat-option value="USER_ROLE">User</mat-option>
+                    <mat-option value="ADMIN_ROLE">Admin</mat-option>
+                    <mat-option value="SUPER_ROLE">Premium</mat-option>
+                  </mat-select>
+                  <mat-label> Rol </mat-label>
+                </mat-form-field>
+                <button mat-button color="primary" (click)="update()">
+                  Actualizar
+                </button>
+              </form>
+            </div>
+            <div class="col-md-6" style="padding-top: 30px;">
+              <ul>
+                <li>
+              <button mat-raised-button color="primary" (click)="openBottomSheet()" >Cambiar Avatar</button>
+
+                </li>
+                <li style="padding-top: 30px;">
+              <button mat-raised-button color="primary" (click)="openBottomSheet2()" >Cambiar fondo</button>
+
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Opciones"> Content 2 </mat-tab>
+        <mat-tab label="Login"> Content 3 </mat-tab>
+      </mat-tab-group>
+    </div>
+  </mat-card-content>
+</mat-card>

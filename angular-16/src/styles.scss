@@ -1,0 +1,70 @@
+/* You can add global styles to this file, and also import other style files */
+.hover:hover{
+    background-color: red($color: #000000);
+}
+.pointer {
+    cursor: pointer;
+}.pointer:hover{
+    cursor: pointer;
+}
+.text-verde_3{
+color:#005562
+}
+.text-verde_2{
+    color:#209287
+
+}
+.text-verde_1{
+    color:#b9f2a1
+}
+.text-gris_1{
+    color:#889397;
+}
+.bg-verde_3{
+    background-color:#005562;
+    }
+.bg-verde_2{
+        background-color:#209287;
+    
+    }
+.bg-verde_1{
+        background-color:#b9f2a1;
+    }
+.bg-verde_0{
+    background: #e8f5f2;
+}
+    
+    .responsive{
+        width: 100%;
+        max-width: 500px; /* Establece un ancho máximo para evitar que se haga demasiado ancho en pantallas grandes */
+        margin: 0 auto; /* Centra el div horizontalmente en la pantalla */
+        padding: 20px;
+    }
+    
+    /* Aplicar estilos diferentes en pantallas más pequeñas utilizando media queries */
+    @media (max-width: 768px) {
+        .responsive{
+            max-width: 100%; /* Para que ocupe todo el ancho disponible en pantallas pequeñas */
+        }
+    }
+
+    /* barra-progreso.component.css */
+/* barra-progreso.component.css */
+.barra-progreso-container {
+    width: 100%;
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 15px; /* Ajusta el valor para redondear más o menos las esquinas */
+    overflow: hidden; /* Asegura que las esquinas redondeadas se muestren correctamente */
+  }
+  
+  .barra-progreso {
+    height: 100%;
+    background-color: #b9f2a1;
+    border-radius: 15px; /* Ajusta el valor para redondear más o menos las esquinas */
+    transition: width 0.3s ease;
+  }
+  .border-none{
+    border: none;
+  }
+  

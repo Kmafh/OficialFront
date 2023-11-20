@@ -1,0 +1,88 @@
+
+    <div class="mio">
+      <a href="javascript:void(0)" class="text-center db"
+      ><img src="../assets/images/logom.png" alt="Home" /><br /><img
+        src="../assets/images/logo-text.png"
+        alt="Home"
+    /></a>
+      <form
+      class=""
+      id="loginform"
+      [formGroup]="form"
+      (ngSubmit)="login()"
+    >
+      
+      <div class="form-group m-t-40">
+        <div class="col-xs-12">
+          <mat-form-field>
+            <input
+              matInput
+              formControlName="email"
+              color="primary"
+              placeholder="email"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-xs-12">
+          <mat-form-field>
+            <input
+              matInput
+              type="password"
+              formControlName="password"
+              color="primary"
+              placeholder="Contraseña"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-12">
+          <div class="checkbox checkbox-primary pull-left p-t-0">
+            <mat-slide-toggle
+              class="example-margin"
+              formControlName="remember"
+              [color]="color"
+              [checked]="checked"
+              [disabled]="disabled"
+            >
+              Recuérdame
+            </mat-slide-toggle>
+          </div>
+          <a
+            href="javascript:void(0)"
+            id="to-recover"
+            class="text-dark pull-right"
+            ><i class="fa fa-lock m-r-5"></i> Forgot pwd?</a
+          >
+        </div>
+      </div>
+      <div class="form-group text-center m-t-20">
+        <div class="col-xs-12">
+          <button mat-raised-button color="primary" type="submit">Entrar</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
+          <div
+            #googleBtn
+            id="buttonDiv"
+            class="d-flex justify-content-center"
+          ></div>
+        </div>
+      </div>
+      <div class="form-group m-b-0">
+        <div class="col-sm-12 text-center">
+          ¿No tienes cuenta?
+          <a  (click)="openDialogRegister()" class="text-danger m-l-5 link-primary pinter"
+            ><b>Registraté</b></a
+          >
+        </div>
+      </div>
+    </form>
+
+
+    </div>
+    
+   

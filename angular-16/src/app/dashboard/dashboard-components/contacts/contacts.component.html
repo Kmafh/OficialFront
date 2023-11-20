@@ -1,0 +1,23 @@
+<mat-card>
+    <div class="p-20 bg-info position-relative">
+        <h4 class="card-title text-white m-0">Seguidos</h4>
+        <h6 class="card-subtitle text-white m-0 op-5">Usuarios a los que sigues</h6>
+        <button mat-mini-fab color="accent" class="add-contact" (click)="openDialog()">+</button>
+    </div>
+    <div class="message-box contact-box p-20">
+        <div class="message-widget contact-widget" *ngFor='let contact of friends'>
+            <!-- Message -->
+            <a (click)="openDialog(contact.user)" >
+                <div class="user-img">
+                    <img [src]='imgUser+contact.user.img' alt="user" class="img-circle">
+                    
+                    <!-- <span class="profile-status pull-right {{contact.class}}"></span> -->
+                </div>
+                <div class="mail-contnet">
+                    <h5>{{contact.user.name}} </h5>
+                    <span class="mail-desc">{{contact.user.email}}</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</mat-card>

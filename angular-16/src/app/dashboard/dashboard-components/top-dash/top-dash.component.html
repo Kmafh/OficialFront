@@ -1,0 +1,136 @@
+<div class="row">
+  <div class="col-lg-3 col-sm-6 ng-star-inserted">
+    <mat-card class="mat-mdc-card mdc-card cardWithShadow text-center"
+      ><mat-card-content class="mat-mdc-card-content p-24 bg-verde_0 text-white"
+        ><div class="row d-flex align-items-center">
+          <span
+            class="align-items-center bg-primary d-flex icon-56 justify-content-center rounded-circle text-white"
+          ></span>
+          <div class="col-6">
+            <mat-card-title class="mat-mdc-card-title f-s-20 f-w-500">
+              <h2 class="text-verde_3">{{ balance  }}</h2></mat-card-title
+            ><mat-card-subtitle
+              class="mat-mdc-card-subtitle m-t-4 f-s-14 f-w-400 m-t-8"
+            >
+              <p class="text-verde_3" >Balance <small >{{value}}%</small></p>
+            </mat-card-subtitle>
+          </div>
+          <div
+            class="col-6 m-2 ml-8 mat-mdc-card-title d-flex icon-56 justify-content-end text-end"
+          >
+                <span
+                  class="align-items-center bg-primary d-flex icon-56 justify-content-center rounded-circle text-white transparent-div"
+                ></span>
+                <mat-progress-spinner
+                  class="example-margin"
+                  [color]="color"
+                  [mode]="mode"
+                  [value]="value"
+                >
+                </mat-progress-spinner>
+          </div>
+        </div> </mat-card-content
+    ></mat-card>
+  </div>
+  <div class="col-lg-3 col-sm-6 ng-star-inserted">
+    <mat-card class="mat-mdc-card mdc-card cardWithShadow text-center"
+      ><mat-card-content class="mat-mdc-card-content p-24"
+        ><div class="row d-flex align-items-center">
+          <span
+            class="align-items-center bg-primary d-flex icon-56 justify-content-center rounded-circle text-white"
+          ></span>
+          <div class="col-6">
+            <mat-card-title class="mat-mdc-card-title f-s-20 f-w-500">
+              <h2>{{ cantGast }}€</h2></mat-card-title
+            ><mat-card-subtitle
+              class="mat-mdc-card-subtitle m-t-4 f-s-14 f-w-400 m-t-8"
+            >
+              Gasto mes <small >{{valueG }}%</small>
+            </mat-card-subtitle>
+          </div>
+          <div
+            class="col-6 m-2 ml-8 mat-mdc-card-title d-flex icon-56 justify-content-end text-end"
+          >
+            <span
+              class="align-items-center bg-primary d-flex icon-56 justify-content-center rounded-circle text-white"
+            ></span>
+            <mat-progress-spinner
+              class="example-margin"
+              [color]="colorG"
+              [mode]="mode"
+              [value]="valueG"
+            >
+            </mat-progress-spinner>
+          </div>
+        </div> </mat-card-content
+    ></mat-card>
+  </div>
+  <div class="col-lg-3 col-sm-6 ng-star-inserted">
+    <mat-card class="mat-mdc-card mdc-card cardWithShadow text-center "
+      ><mat-card-content class="mat-mdc-card-content p-24 "
+        ><div class="row d-flex align-items-center">
+          <span
+            class="align-items-center bg-primary d-flex icon-56 justify-content-center rounded-circle text-white"
+          ></span>
+          <div class="col-6">
+            <mat-card-title class="mat-mdc-card-title f-s-20 f-w-500">
+              <h2>{{ cantIng }}€</h2></mat-card-title
+            ><mat-card-subtitle
+              class="mat-mdc-card-subtitle m-t-4 f-s-14 f-w-400 m-t-8"
+            >
+              Ingreso mes 
+            </mat-card-subtitle>
+          </div>
+          <div
+            class="col-6 m-2 ml-8 mat-mdc-card-title d-flex icon-56 justify-content-end text-end"
+          >
+            <span
+              class="align-items-center bg-primary d-flex icon-56 justify-content-center rounded-circle text-white"
+            ></span>
+            <mat-progress-spinner
+              class="example-margin"
+              [color]="colorI"
+              [mode]="mode"
+              [value]="valueI"
+            >
+            </mat-progress-spinner>
+          </div>
+        </div> </mat-card-content
+    ></mat-card>
+  </div>
+  <div class="col-lg-3 col-sm-6 ng-star-inserted">
+    <mat-card class="mat-mdc-card mdc-card cardWithShadow text-center"
+      ><mat-card-content class="mat-mdc-card-content p-24"
+        ><div class="row d-flex align-items-center">
+          <span
+            class="align-items-center bg-primary d-flex icon-56 justify-content-center rounded-circle text-white"
+          ></span>
+          <div class="col-6">
+            <mat-card-title class="mat-mdc-card-title f-s-20 f-w-500">
+              <h2>{{ cantAhor }}€</h2></mat-card-title
+            ><mat-card-subtitle
+              class="mat-mdc-card-subtitle m-t-4 f-s-14 f-w-400 m-t-8"
+            >
+              Ahorro total <small>{{valueA }}%</small>
+            </mat-card-subtitle>
+          </div>
+          <div
+            class="col-6 m-2 ml-8 mat-mdc-card-title d-flex icon-56 justify-content-end text-end"
+          >
+            <span
+              class="align-items-center bg-primary d-flex icon-56 justify-content-center rounded-circle text-white"
+            ></span>
+            <mat-progress-spinner
+              class="example-margin"
+              [color]="color"
+              [mode]="mode"
+              [value]="valueA"
+            >
+            </mat-progress-spinner>
+          </div>
+        </div> </mat-card-content
+    ></mat-card>
+  </div>
+
+  <!---->
+</div>

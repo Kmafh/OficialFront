@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-12 text-primary">
+        <mat-card-content>
+          <button mat-raised-button [matMenuTriggerFor]="menu" color="primary" >
+            <mat-icon>add</mat-icon> Nuevo
+          </button>
+          <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="openDialogLoans()">Crédito</button>
+              <button mat-menu-item (click)="openDialog()">Hucha</button>
+          </mat-menu>
+        </mat-card-content>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 text-primary">
+      <mat-tab-group>
+        <mat-tab label="Créditos">
+            <mat-card-content class="border-none">
+              <app-loans></app-loans></mat-card-content
+          >
+        </mat-tab>
+        
+        <mat-tab label="Ahorros">
+          <mat-card-content class="border-none">
+            <app-tarjet></app-tarjet></mat-card-content
+        >
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>

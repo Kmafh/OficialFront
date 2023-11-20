@@ -1,0 +1,24 @@
+        
+<!-- ============================================================== -->
+<!-- Profile - style you can find in header.scss -->
+<!-- ============================================================== -->
+<button mat-icon-button  (click)="openDialogAlert()" style="margin-right: 10px;">
+    <mat-icon matBadge="{{cont}}" matBadgeColor="warn" *ngIf="cont!==0">feedback</mat-icon>
+    <mat-icon  *ngIf="cont===0" class="text-gris_1">feedback</mat-icon>
+</button>
+<button mat-icon-button  (click)="openDialogAlert()" style="margin-right: 10px;">
+    <mat-icon matBadge="{{cont}}" matBadgeColor="warn" *ngIf="cont!==0">add_alert</mat-icon>
+    <mat-icon  *ngIf="cont===0"  class="text-gris_1">add_alert</mat-icon>
+</button>
+  
+<!-- <a (click)="openDialog()" class=" m-r-20 hidden-sm-up" mat-raised-button color="accent">Crear gestión</a> -->
+<button [matMenuTriggerFor]="profile" mat-icon-button class="m-r-5 p-0 d-flex jc-c align-items-center"> <img [src]=imgUrl alt="user" class="profile-pic"> </button>
+<mat-menu #profile="matMenu" class="mymegamenu">
+    <button mat-menu-item>
+        <mat-icon>settings</mat-icon> Configuración </button>
+    <button mat-menu-item routerLink="profile">
+        <mat-icon>account_box</mat-icon> Perfil </button>
+    <button mat-menu-item (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon> Salir</button>
+</mat-menu>
+

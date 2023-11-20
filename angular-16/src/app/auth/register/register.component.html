@@ -1,0 +1,65 @@
+<div class="mio">
+  <a href="javascript:void(0)" class="text-center db"
+    ><img src="../assets/images/logom.png" alt="Home" /><br /><img
+      src="../assets/images/logo-text.png"
+      alt="Home"
+  /></a>
+  <form
+    style="margin-left: 10px"
+    id="loginform"
+    [formGroup]="form"
+    (ngSubmit)="register()"
+  >
+    <div class="form-group m-t-40">
+      <div class="col-xs-12">
+        <mat-form-field>
+          <input
+            matInput
+            formControlName="email"
+            color="primary"
+            placeholder="email"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-xs-12">
+        <mat-form-field>
+          <input
+            matInput
+            type="password"
+            formControlName="password"
+            color="primary"
+            placeholder="Contraseña"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="form-group m-t-40">
+      <div class="col-xs-12">
+        <mat-form-field>
+          <input
+            matInput
+            formControlName="name"
+            color="primary"
+            placeholder="Nombre"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="form-group text-center m-t-20">
+      <div class="col-xs-12">
+        <button mat-raised-button color="primary" type="submit">Unirte</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
+        <div
+          #googleBtn
+          id="buttonDiv"
+          class="d-flex justify-content-center"
+        ></div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,47 @@
+<mat-card class="oh text-center little-profile">
+  <img
+    mat-card-image
+    src="assets/images/background/piggy.png"
+    alt="Photo of a Shiba Inu"
+    style="height: 100px"
+  />
+  <mat-card-content>
+    <div class="pro-img" aria-label="Button that displays a tooltip when focused or hovered over" >
+      <img src="{{ imgUrl }}" alt="user" class="img-circle up" />
+    </div>
+    
+    <form [formGroup]="form">
+      <mat-form-field style="padding-top: 30px">
+        <mat-label>Nombre</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="{{ data.row.name }}"
+          formControlName="origin"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Cantidad</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="cant"
+        />
+      </mat-form-field>
+      <mat-card-actions class="db">
+        <div class="row">
+        <div class="col-8 text-right">
+          <button mat-button color="accent" (click)="update()">Actualizar</button>
+        &nbsp;
+        </div>
+        
+        <div class="col-4 text-right">
+          <button mat-button color="warn" (click)="deleteIncome()">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+      </mat-card-actions>
+    </form>
+  </mat-card-content>
+</mat-card>

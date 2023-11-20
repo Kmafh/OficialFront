@@ -1,0 +1,9 @@
+.breadcrumb {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .breadcrumb li {
+    display: inline;
+    margin-right: 10px; /* Añade espacio entre los elementos si lo deseas */
+  }

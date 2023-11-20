@@ -1,0 +1,53 @@
+.menu{
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+    transition: all 1s ease; 
+}
+
+.center{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lista-horizontal {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .lista-horizontal li {
+    display: inline-block;
+    margin-right: 100px; /* Espacio entre elementos (opcional) */
+  }
+  .lista-horizontal li a{
+    color: #209287;
+    
+  }
+  .lista-horizontal li a:hover{
+    color: #005562;
+    
+  }
+  .menu-container {
+    position: absolute;
+    width: 100%; /* Ajusta el ancho según sea necesario */
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+    transition: all 1s ease;
+    margin-top: 70px;
+    z-index: 1; /* Asegura que el menú esté por encima del carrusel */
+  }
+
+  .border{
+    border: 1px solid #ccc;
+    margin: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+
+    cursor: pointer;
+  }
+
+  .border:hover{
+    transform: scale(1.05); /* Escalamos el div en hover */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+  }
+ 

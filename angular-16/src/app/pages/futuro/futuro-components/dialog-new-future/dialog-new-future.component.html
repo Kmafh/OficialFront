@@ -1,0 +1,104 @@
+<mat-card class="oh text-center little-profile " >
+  <img
+  mat-card-image
+  src="assets/images/background/piggy.png"
+  alt="Photo of a Shiba Inu"
+  style="height: 100px"
+/>
+<mat-card-content class="responsive">
+  <div class="pro-img">
+    <img
+      src="assets/images/background/ahorro.png"
+      alt="user"
+      class="img-circle"
+      style="height: 150px; width: 150px"
+    />
+    <h3>Hucha</h3>
+  </div>
+    <mat-stepper linear #stepper class="responsive">
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <div class="row" style="padding-top: 20px">
+            <div class="col-12">
+              <mat-form-field>
+                <mat-label>Titulo</mat-label>
+                <input matInput type="text" formControlName="origin" disable />
+              </mat-form-field>
+            </div>
+            <div class="col-12">
+              <mat-form-field appearance="fill">
+                <mat-label>Tipo</mat-label>
+                <select matNativeControl formControlName="tipe">
+                  <option value="{{food.value}}" *ngFor="let food of foods">{{food.viewValue}}</option>
+                </select>
+              </mat-form-field>
+            </div>
+            
+          </div>
+
+          <div>
+            <button mat-raised-button matStepperNext color="primary" style="margin-left: 8px;">Sig.</button>
+              
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup" [optional]="isOptional">
+        <form [formGroup]="secondFormGroup">
+          <div class="row" style="padding-top: 20px" *ngIf="firstFormGroup.value.tipe === 'prog'">
+            
+            <div class="col-12">
+              <mat-form-field>
+                <mat-label>Aporte mensual</mat-label>
+                <input matInput type="number" formControlName="cant" disable />
+              </mat-form-field>
+            </div>
+            <div class="col-12">
+              <mat-form-field>
+                <mat-label>Fecha objetivo</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="finishAt">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row" style="padding-top: 20px" *ngIf="firstFormGroup.value.tipe === 'expo'">
+            <div class="col-12">
+              
+             <p>Hucha exporadica. Podrás hacer ingresos cuando desees</p>
+
+            </div>
+          </div>
+          <div>
+            <button mat-raised-button matStepperPrevious color="primary">Atras</button>
+            <button mat-raised-button matStepperNext (click)="setFinishAt()" color="primary" style="margin-left: 8px;">Sig.</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <div class="row" style="padding-top: 20px; margin-bottom: 20px;" *ngIf="firstFormGroup.value.tipe === 'expo'">
+          <div class="col-12">
+            {{ firstFormGroup.controls.origin.value }}
+          </div>
+        </div>
+        <div class="row" style="padding-top: 20px;  margin-bottom: 20px;" *ngIf="firstFormGroup.value.tipe !== 'expo'">
+          <div class="col-12">
+            Titulo: {{ firstFormGroup.controls.origin.value }}
+          </div>
+          <div class="col-12">
+            Aporte mensual: {{ secondFormGroup.controls.cant.value }}
+          </div>
+          <div class="col-12">
+            Fecha objetivo: {{ secondFormGroup.controls.finishAt.value | date }}
+          </div>
+        </div>
+        <div>
+          <button mat-raised-button matStepperPrevious color="primary">Atras</button>
+          <button mat-raised-button (click)="stepper.reset()">Reset</button>
+          <button mat-raised-button (click)="create()" color="primary">Aceptar</button>
+          
+        </div>
+      </mat-step>
+    </mat-stepper>
+  </mat-card-content>
+</mat-card>

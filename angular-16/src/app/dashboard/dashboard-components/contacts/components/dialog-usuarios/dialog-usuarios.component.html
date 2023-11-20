@@ -1,0 +1,118 @@
+<div style="width: 100vh; height: 70vh">
+  <div *ngIf="!update">
+    <mat-form-field
+      class="custom-mat-form-field"
+      style="width: 400px"
+      style="margin: 0 0 -10px"
+    >
+      <mat-label>Filter</mat-label>
+      <input
+        matInput
+        (keyup)="applyFilter($event)"
+        placeholder="Ex. Mia"
+        #input
+      />
+    </mat-form-field>
+
+    <table mat-table [dataSource]="dataSource" matSort class="demo-table">
+      <!-- ID Column -->
+      <ng-container matColumnDef="img">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let row" class="text-center">
+          <img
+            img
+            src="{{ imgUser }}{{ row.img }}"
+            alt="user"
+            class="img-circle"
+            style="width: 40px"
+          />
+        </td>
+      </ng-container>
+
+      <!-- Progress Column -->
+      <ng-container matColumnDef="origin">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Usuario</th>
+        <td mat-cell *matCellDef="let row">
+          {{ row.origin }}
+          <p>
+            {{ row.name }}<br /><small>{{ row.email }}</small>
+          </p>
+        </td>
+      </ng-container>
+      <!-- Progress Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let row" class="text-center">
+          <button
+            mat-icon-button
+            aria-label="Example icon button with a vertical three dot icon"
+            (click)="add(row.uid)"
+            *ngIf="row.uid !== yo && !value"
+          >
+            <mat-icon>group_add</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+        mat-row
+        *matRowDef="let row; columns: displayedColumns"
+        [ngClass]="{ 'fila-sin-time': row.oid }"
+      ></tr>
+
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">
+          No data matching the filter "{{ input.value }}"
+        </td>
+      </tr>
+    </table>
+
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      aria-label="Select page of users"
+    ></mat-paginator>
+  </div>
+
+  <div *ngIf="update" style="height: 100%;">
+    <mat-card class="oh text-center little-profile">
+      <img
+        mat-card-image
+        src="{{ imgFondo }}{{ data.row.fondo }}"
+        alt="Photo of a Shiba Inu" style="height: 20vh; object-fit: cover;"
+      />
+      <mat-card-content>
+        <div class="pro-img">
+          <img
+            src="{{ imgUser }}{{ data.row.img }}"
+            width="100"
+            alt="user"
+            class="img-circle"
+          />
+        </div>
+        <h3 class="m-b-0">{{ data.row.name }}</h3>
+        <h6 class="m-t-0">{{ data.row.email }}</h6>
+
+        <div class="row m-t-30">
+          <div class="col-4">
+            <button mat-icon-button  style="margin-right: 10px;">
+              <mat-icon  matBadgeColor="warn">feedback</mat-icon>
+          </button>
+          </div>
+          <div class="col-4">
+            <h3 class="m-0 font-light">23,469</h3>
+            <small>Followers</small>
+          </div>
+          <div class="col-4">
+            <button mat-icon-button  style="margin-right: 10px;">
+              <mat-icon  >add_alert</mat-icon>
+          </button>
+          </div>
+        </div>
+        
+      
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="oh text-center little-profile">Publicado</mat-card>
+  </div>
+</div>

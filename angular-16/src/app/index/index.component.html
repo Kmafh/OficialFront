@@ -1,0 +1,130 @@
+<div class="main-container bg-white">
+  <!-- ============================================================== -->
+  <!-- Topbar - style you can find in header.scss -->
+  <!-- ============================================================== -->
+  <mat-toolbar class="topbar telative">
+    <!-- ============================================================== -->
+    <!-- Logo - style you can find in header.scss -->
+    <!-- ============================================================== -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html">
+        <!-- Logo icon --><b>
+          <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+          <!-- Dark Logo icon -->
+          <img
+            src="../../assets/images/logo-icon.png"
+            alt="homepage"
+            class="dark-logo"
+          />
+          <!-- Light Logo icon -->
+          <img
+            src="../../assets/images/logo-light-icon.png"
+            alt="homepage"
+            class="light-logo"
+          />
+        </b>
+        <!--End Logo icon -->
+        <!-- Logo text -->
+        <span class="text-logo-icon" fxShow="false" fxShow.gt-xs>
+          <!-- dark Logo text -->
+          <img
+            src="../../assets/images/logo-text.png"
+            alt="homepage"
+            class="dark-logo"
+          />
+          <!-- Light Logo text -->
+          <img
+            src="../../assets/images/logo-light-text.png"
+            class="light-logo"
+            alt="homepage"
+          />
+        </span>
+      </a>
+    </div>
+    <button
+      mat-icon-button
+      value="sidebarclosed"
+      (mouseenter)="showMenu ? (showMenu = false) : (showMenu = true)"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <!-- ============================================================== -->
+    <!-- app header component - style you can find in header.scss / header.component.ts-->
+    <!-- ============================================================== -->
+    <div class="d-flex align-items-center ml-auto">
+      <button
+        mat-icon-button
+        class="m-r-5 p-0 d-flex jc-c align-items-center"
+        (click)="openDialog()"
+        matTooltip="Login"
+        aria-label="Button that displays a tooltip when focused or hovered over"
+      >
+        <mat-icon> person_pin</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+  <div class="carrusel">
+    <app-carrusel></app-carrusel>
+  </div>
+  <div class="row  bg-white">
+    <div class="col-12 center">
+      <h3>¿De que se trata?</h3>
+    </div>
+  </div>
+  <div class="row  bg-white  center">
+    <div class="col-2 rounded border " (click)="openDialogInfo('mov')">
+      <div class="row" style="margin-left: 30px;">
+        <div class="col-2 center"><img src="../../assets/images/background/flechas.png" alt="" > </div>
+        <div class="col"><p> Movimientos<br><small class="text-verde_2"> ver más ></small></p></div>
+      </div>
+      
+      
+    </div>
+    <div class="col-2 rounded border " (click)="openDialogInfo('aho')">
+      <div class="row" style="margin-left: 30px;">
+        <div class="col-2 center"><img src="../../assets/images/background/hucha.png" alt="" > </div>
+        <div class="col"><p> Ahorros<br><small class="text-verde_2"> ver más ></small></p></div>
+      </div>
+    </div>
+    <div class="col-2 rounded border " (click)="openDialogInfo('pro')">
+      <div class="row" style="margin-left: 30px;">
+        <div class="col-2 center"><img src="../../assets/images/background/avion.png" alt="" > </div>
+        <div class="col"><p> Proyectos<br><small class="text-verde_2"> ver más ></small></p></div>
+      </div>
+    </div>
+    <div class="col-2 rounded border " (click)="openDialogInfo('per')">
+      <div class="row" style="margin-left: 30px;">
+        <div class="col-2 center"><img src="../../assets/images/background/personal.png" alt="" > </div>
+        <div class="col"><p> Datos personales<br><small class="text-verde_2"> ver más ></small></p></div>
+      </div>
+    </div>
+    
+  </div>
+<div class="row">
+  <div class="col">
+    <img src="../../assets/images/background/laptop.png" alt="" >
+  </div>
+</div>
+
+
+
+  <div
+    class="menu-container menu"
+    *ngIf="showMenu"
+    (mouseleave)="showMenu ? (showMenu = false) : (showMenu = true)"
+  >
+      <div class="row">
+        <div class="col center">
+          <ul class="lista-horizontal">
+            <li><a href=""><b>Registro</b></a></li>
+            <li><a href=""><b>Utilidades</b></a></li>
+            <li><a href=""><b>Porfolio</b></a></li>
+            <!-- Agrega más elementos según sea necesario -->
+          </ul>
+        </div>
+      </div>
+  </div>
+  
+ 
+</div>

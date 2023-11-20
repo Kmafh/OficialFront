@@ -1,0 +1,166 @@
+<!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, molestias nam fugiat aliquid dolorem </p> -->
+<mat-card class="text-center little-profile">
+  <img
+    mat-card-image
+    src="assets/images/background/piggy.png"
+    alt="Photo of a Shiba Inu"
+    style="height: 30px; margin-bottom: 70px;"
+  />
+  <mat-card-content>
+    <div class="pro-img">
+      <img
+        src="{{ imgUrl }}{{ data.row.img }}"
+        alt="user"
+        class="img-circle"
+        style="height: 200px; width: 200px"
+      />
+    </div>
+    <h3 class="m-b-0" *ngIf="!edit">{{ data.row.origin }}</h3>
+    <h6 class="m-t-0"></h6>
+
+    <mat-card-actions class="db">
+      <button
+        mat-raised-button
+        color="warn"
+        (click)="edit === true ? (edit = false) : (edit = true)"
+        *ngIf="!edit"
+      >
+        Actualizar
+      </button>
+      <button
+        mat-raised-button
+        color="warn"
+        (click)="edit === true ? (edit = false) : (edit = true)"
+        *ngIf="edit"
+
+      >
+        Atrás
+      </button>
+    </mat-card-actions>
+    <div class="row m-t-30" *ngIf="!edit">
+      <div class="col-12 " style="margin-top: 10px;">
+        <div class="barra-progreso-container text-center">
+          <div class="barra-progreso" [style.width.%]="porcentaje"></div>
+        </div>
+
+        {{porcentaje  | number:'1.0-2' }}%
+      </div>
+      <div class="col-12" *ngIf="!edit">
+        <div class="row">
+        <div class="col-4">
+          <small>Importe pendiente</small><br>
+          <h2>{{ data.row.cantPendiente | currency:'EUR':'symbol':'1.0-0' }}</h2>
+        </div>
+        <div class="col-2">
+          <small>Cuota</small><br>
+        <h3>{{ data.row.cant | currency:'EUR':'symbol':'1.0-0' }}</h3>
+        </div>
+        <div class="col-4">
+          <small>Fecha vencimiento</small><br>
+        <h3> {{ data.row.finishAt | date }}</h3>
+        </div>
+        <div class="col-2">
+          <small>Recibos </small><br>
+        <h3>{{ data.row.recibos }}</h3>
+        </div>
+      </div>
+        <!-- <div class="row">
+          <div class="col-4">
+            <h2 class="m-0 font-light">{{ data.row.cant | currency:'EUR':'symbol':'1.0-0' }}</h2>
+            <small>Cuota</small>
+          </div>
+          <div class="col-4">
+            <h3 class="m-0 font-light">{{ data.row.cantPendiente | currency:'EUR':'symbol':'1.0-0' }}</h3>
+            <small>Pendiente</small>
+          </div>
+          <div class="col-4">
+            <h3 class="m-0 font-light">{{ data.row.tipe  }}</h3>
+            <small>Programado</small>
+          </div>
+          <div class="col-6">
+            <h3 class="m-0 font-light">{{ data.row.cantFinish | currency:'EUR':'symbol':'1.0-0' }}</h3>
+            <small>Objetivo</small>
+          </div>
+          <div class="col-6">
+            <h3 class="m-0 font-light">{{ data.row.finishAt | date }}</h3>
+            <small>Fecha objetivo</small>
+          </div>
+        </div> -->
+      </div>
+      
+      
+        
+    </div>
+    <div class="row" *ngIf="edit">
+      <mat-card class="oh text-center little-profile" style="width: 500px">
+        <mat-card-content>
+          <mat-stepper #stepper>
+            <mat-step [stepControl]="formTitulo">
+              <ng-template matStepLabel>Título</ng-template>
+
+              <form [formGroup]="formTitulo">
+                <div class="row" style="padding-top: 20px">
+                  <div class="col-12">
+                    <mat-form-field>
+                      <mat-label>Titulo</mat-label>
+                      <input matInput type="text" formControlName="origin" disable />
+                    </mat-form-field>
+                  </div>
+                </div>
+      
+                <div>
+                  <button mat-raised-button color="primary"  (click)="putTitle()">
+                    Actualizar
+                  </button>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step [stepControl]="formCant">
+              <ng-template matStepLabel>Aporte</ng-template>
+              <form [formGroup]="formCant">
+                <div class="row" style="padding-top: 20px">
+                  
+                  <div class="col-12">
+                    <mat-form-field>
+                      <mat-label>Cant. €</mat-label>
+                      <input matInput type="number" formControlName="cant" disable />
+                    </mat-form-field>
+                    <mat-label>Reducir en:</mat-label>
+                    <mat-chip-listbox aria-label="Fish selection" class="text-center" formControlName="tipe">
+                      <mat-chip-option value="1">Cuota</mat-chip-option>
+                      <mat-chip-option value="2">Fecha liquidación</mat-chip-option>
+                    </mat-chip-listbox>
+                  </div>
+                  
+                </div>
+                <div>
+                  <button mat-raised-button color="primary"  (click)="putCant()">Aportar</button>
+                </div>
+              </form>
+            </mat-step>
+          </mat-stepper>
+      
+        </mat-card-content>
+      </mat-card>
+      
+    </div>
+  </mat-card-content>
+  <div class="col-12 " style="margin-top: 10px;">
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Movimientos
+          </mat-panel-title>
+          <mat-panel-description>
+            Movimientos del crédito
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <app-table-movements [oid]="data.row.id" *ngIf="data.row.tipe !== 'income' && data.row.tipe !== 'bill'" ></app-table-movements>
+      </mat-expansion-panel>
+    </mat-accordion>
+    
+    
+    
+    </div>
+</mat-card>

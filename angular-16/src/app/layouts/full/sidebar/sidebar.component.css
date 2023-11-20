@@ -1,0 +1,8 @@
+.bg-gris:hover{
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.bg-gris{
+    cursor: pointer;
+}

@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-12 text-primary" *ngIf="resp || resp[0].saving?.length === 0">
+    <mat-card class="oh text-center little-profile">
+      <mat-card-content> No hay huchas almacenadas. </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-6 col-md-3 text-primary" *ngFor="let saving of resp[0].saving">
+    
+      <mat-card class="oh text-center little-profile">
+        <img
+          mat-card-image
+          src="assets/images/background/piggy.png"
+          alt="Photo of a Shiba Inu"
+        style="height: 80px; margin-bottom: 50px;"
+
+        />
+        <mat-card-content>
+          <div class="pro-img">
+            <img
+              src="{{ imgUrl }}{{ saving.img }}"
+              width="80"
+              alt="user"
+              class="img-circle"
+            />
+          </div>
+          <h3 class="m-b-0"></h3>
+          <h6 class="m-t-0"></h6>
+          <mat-card-actions class="db">
+            <button mat-raised-button color="warn" (click)="openDialog(saving)">
+              Detalles
+            </button>
+          </mat-card-actions>
+          <div class="row m-t-30">
+            <div class="col-md-4">
+              <h3 class="m-0 font-light">{{ saving.cant }}€</h3>
+              <small>Actual</small>
+            </div>
+            <div class="col-md-4" *ngIf="saving.cantFinish">
+              <h3 class="m-0 font-light">{{ saving.cantFinish }}€</h3>
+              <small>Objetivo</small>
+            </div>
+            <div class="col-md-4 text-center" *ngIf="!saving.cantFinish">
+              <h3 class="m-0 font-light">-</h3>
+              <small >Objetivo</small>
+            </div>
+            <div class="col-md-4" *ngIf="saving.cantFinish">
+              <h3 class="m-0 font-light">{{ saving.cantFinish - saving.cant }}€</h3>
+              <small>Cuota</small>
+            </div>
+            <div class="col-md-4 text-center" *ngIf="!saving.cantFinish">
+              <h3 class="m-0 font-light">-</h3>
+              <small >Cuota</small>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12 text-primary">
+    <mat-card class="oh text-center little-profile">
+      <!-- <img mat-card-image src="assets/images/background/user-info.jpg" alt="Photo of a Shiba Inu"> -->
+      <mat-card-content>
+        <!-- <app-table-future></app-table-future>> -->
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

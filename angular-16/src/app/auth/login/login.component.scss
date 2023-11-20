@@ -1,0 +1,27 @@
+.mio {
+  width: 50vh;
+  margin: 0;
+  margin-bottom: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: #f0f0f0;
+  
+  
+}
+
+.cardMio {
+  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+
+}
+.borderS{
+  
+border-bottom: 1px solid #ccc; /* Color y grosor del borde */
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+padding: 10px; /* Espacio interno para el contenido */
+}
+.pinter{
+  cursor: pointer;
+}
