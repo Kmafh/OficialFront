@@ -20,7 +20,17 @@
     <mat-tab-group>
       <mat-tab label="Gráficos">
         <mat-card-content>
-          <div class="row">
+          <div class="row" *ngIf="!resp">
+            <div class="body">
+              <div class="preload-container">
+                  <div class="loader"></div>
+                  <p>Cargando...</p>
+              </div>
+              <div class="content">
+                  <!-- El contenido de tu página va aquí -->
+              </div>
+          </div></div>
+          <div class="row" *ngIf="resp">
             <div class="col-12 col-md-4">
               <app-our-visiter></app-our-visiter>
             </div>
@@ -29,7 +39,7 @@
             </div>
           </div>
         </mat-card-content>
-        <div class="col-12 text-primary">
+        <div class="col-12 text-primary" *ngIf="resp">
           <app-table-gestion></app-table-gestion>
         </div>
       </mat-tab>

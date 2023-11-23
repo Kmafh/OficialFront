@@ -46,8 +46,38 @@
   }
 
   .border:hover{
-    transform: scale(1.05); /* Escalamos el div en hover */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+     /* Escalamos el div en hover */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 
   }
  
+
+
+  .div {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .div:hover img {
+    transform: translateX(-100%);
+  }
+  
+  .div:hover .overlay-text {
+    opacity: 1;
+  }

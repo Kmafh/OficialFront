@@ -14,7 +14,17 @@
 <!-- ============================================================== -->
 <!-- Image Card row-->
 <!-- ============================================================== -->
-<div class="row">
+<div class="row" *ngIf="!resp">
+            <div class="body">
+              <div class="preload-container">
+                  <div class="loader"></div>
+                  <p>Cargando...</p>
+              </div>
+              <div class="content">
+                  <!-- El contenido de tu página va aquí -->
+              </div>
+          </div></div>
+          <div class="row" *ngIf="resp">
   <!-- Card column -->
   <div class="col-lg-3 col-sm-12">
     <app-profile></app-profile>

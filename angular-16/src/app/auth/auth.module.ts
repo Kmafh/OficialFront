@@ -24,13 +24,15 @@ import { SnackbarComponent } from '../material-component/snackbar/snackbar.compo
 import { SliderComponent } from '../material-component/slider/slider.component';
 import { SlideToggleComponent } from '../material-component/slide-toggle/slide-toggle.component';
 import { RegisterComponent } from './register/register.component';
+import { ModalComponent } from './register/modal.component';
 
 
 
 @NgModule({
   declarations: [
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ModalComponent
   ],
   imports: [
     CommonModule,

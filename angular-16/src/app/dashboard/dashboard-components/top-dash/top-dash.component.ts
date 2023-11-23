@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import { Income } from 'src/app/models/income';
 import { IncomeService } from 'src/app/services/income.service';
-import { CurrencyPipe } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { UtilsService } from '../../../services/utils.service';
 import { ThemePalette } from '@angular/material/core';
 import { MatProgressSpinnerModule, ProgressSpinnerMode } from '@angular/material/progress-spinner';
@@ -18,6 +18,7 @@ import { SpinnerComponent } from './top-components/spinner/spinner.component';
     MatCardModule,
     MatRadioModule,
     MatProgressSpinnerModule,
+    CommonModule
   ],
   templateUrl: './top-dash.component.html',
   styleUrls: ['./top-dash.component.scss']

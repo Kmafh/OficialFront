@@ -7,8 +7,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="assets/images/favicon.png"/>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7339047729707952"
+     crossorigin="anonymous"></script>
 </head>
 <body>
   <app-root></app-root>
+
+  <script src="https://accounts.google.com/gsi/client" async></script>
+    <script>
+      function handleCredentialResponse(response) {
+        console.log("Encoded JWT ID token: " + response.credential);
+      }
+      window.onload = function () {
+        google.accounts.id.initialize({
+          client_id: "1002586506206-6vf3fkfbg3273bt4gfvdmnp4o3olsif8.apps.googleusercontent.com",
+          callback: handleCredentialResponse
+        });
+        google.accounts.id.renderButton(
+          document.getElementById("buttonDiv"),
+          { theme: "outline", size: "large" }  // customization attributes
+        );
+        google.accounts.id.prompt(); // also display the One Tap dialog
+      }
+    </script>
 </body>
 </html>

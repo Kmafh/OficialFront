@@ -7,6 +7,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { UtilsService } from 'src/app/services/utils.service';
+import { ModalComponent } from './modal.component';
 
 @Component({
   selector: 'app-register',
@@ -107,11 +108,17 @@ export class RegisterComponent {
     }
   }
 
-  openDialogRegister(): void {
-    const dialogRef = this.dialog.open(RegisterComponent);
+  openDialogLogin(): void {
+    const dialogRef = this.dialog.open(LoginComponent);
     this.onNoClick()
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
   }  
+  openDialogModal(): void {
+    const dialogRef = this.dialog.open(ModalComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
 }

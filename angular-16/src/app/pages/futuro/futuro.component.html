@@ -1,4 +1,14 @@
-<div class="row">
+<div class="row" *ngIf="!resp">
+  <div class="body">
+    <div class="preload-container">
+        <div class="loader"></div>
+        <p>Cargando...</p>
+    </div>
+    <div class="content">
+        <!-- El contenido de tu página va aquí -->
+    </div>
+</div></div>
+<div class="row" *ngIf="resp">
     <div class="col-12 text-primary">
         <mat-card-content>
           <button mat-raised-button [matMenuTriggerFor]="menu" color="primary" >
