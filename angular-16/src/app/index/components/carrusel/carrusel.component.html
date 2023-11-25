@@ -1,3 +1,4 @@
 <div class="carousel" style="margin-bottom: 30px;">
-  <img [src]="images[currentIndex]" alt="Slide" [class.hidden]="currentIndex !== prevIndex">
+  <img [src]="images[currentIndex]" alt="Slide" [class.hidden]="currentIndex !== prevIndex" *ngIf="getOption() === false">
+  <img [src]="images2[currentIndex]" alt="Slide" [class.hidden]="currentIndex !== prevIndex" *ngIf="getOption() === true">
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-carrusel',
@@ -6,7 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./carrusel.component.scss']
 })
 export class CarruselComponent {
+  @Input() opcion:boolean = false
   images = ['../../../../assets/images/background/fondo.png', '../../../../assets/images/background/woman.png'];
+  images2 = ['../../../../assets/images/background/fondosmall.png', '../../../../assets/images/background/arbol.jpg'];
   currentIndex = 0;
   prevIndex = 0;
   intervalId: any;
@@ -37,5 +39,8 @@ export class CarruselComponent {
 
   stopAutoPlay() {
     clearInterval(this.intervalId);
+  }
+  getOption() {
+    return this.opcion;
   }
 }

@@ -68,6 +68,7 @@ export class UsuarioService {
     //pendiente de *RegisterForm
 
     return this.http.post(`${endpoint}/usuarios`, formData);
+    // return this.http.post(`${endpoint}/login/sendMail`, formData);
   }
 
   updateUser(tipe:string, data: { name: string, img:string }) {

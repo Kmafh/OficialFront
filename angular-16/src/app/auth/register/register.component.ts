@@ -4,10 +4,10 @@ import { IndexComponent } from 'src/app/index/index.component';
 import { LoginComponent } from '../login/login.component';
 import { FormBuilder, Validators } from '@angular/forms';
 import { UsuarioService } from 'src/app/services/usuario.service';
-import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { UtilsService } from 'src/app/services/utils.service';
 import { ModalComponent } from './modal.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -25,6 +25,7 @@ export class RegisterComponent {
     email:[localStorage.getItem('email') || '',[Validators.required,Validators.email]],
     password:['',[Validators.required]],
     name:['',[Validators.required]],
+    cond:[false,[Validators.required]],
   })
 
   constructor(private fb: FormBuilder, private userService: UsuarioService, private router: Router,
@@ -75,7 +76,7 @@ export class RegisterComponent {
   }
 
   async register() {
-    if(this.form.valid) {
+    if(this.form.valid ) {
       try{
         let value = this.form.value
         await this.utilsService.setUsuario(value)

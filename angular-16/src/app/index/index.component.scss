@@ -1,83 +1,119 @@
-.menu{
-    background-color: white;
-    border-bottom: 1px solid #ccc;
-    transition: all 1s ease; 
-}
-
 .center{
-    display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex;
+justify-content: center;
+align-items: center;
 }
 
 .lista-horizontal {
-    list-style-type: none;
-    padding: 0;
-  }
-  
+  list-style-type: none;
+  padding: 0;
+  text-align: center; /* Alinea la lista al centro en dispositivos móviles */
+  cursor: pointer;
+}
+
+.lista-horizontal li {
+  display: inline-block;
+  margin-right: 20px; /* Espacio entre elementos (ajusta según sea necesario) */
+}
+
+.lista-horizontal li a {
+  color: white;
+}
+
+.lista-horizontal li a:hover {
+  color: #ccc;
+}
+
+/* Cambia el diseño a vertical en dispositivos móviles */
+@media (max-width: 767px) {
   .lista-horizontal li {
-    display: inline-block;
-    margin-right: 100px; /* Espacio entre elementos (opcional) */
+    display: block;
+    margin-right: 0; /* Elimina el margen entre elementos */
+    margin-bottom: 10px; /* Espacio entre elementos verticales en móviles (ajusta según sea necesario) */
   }
-  .lista-horizontal li a{
-    color: #209287;
-    
-  }
-  .lista-horizontal li a:hover{
-    color: #005562;
-    
-  }
-  .menu-container {
-    position: absolute;
-    width: 100%; /* Ajusta el ancho según sea necesario */
-    background-color: white;
-    border-bottom: 1px solid #ccc;
-    transition: all 1s ease;
-    margin-top: 70px;
-    z-index: 1; /* Asegura que el menú esté por encima del carrusel */
-  }
+}
+.menu-container {
+  position: absolute;
+  width: 100%; /* Ajusta el ancho según sea necesario */
+  background-color: #209287;
+  border-bottom: 1px solid #ccc;
+  transition: all 1s ease;
+  margin-top: 70px;
+  z-index: 1; /* Asegura que el menú esté por encima del carrusel */
+}
 
-  .border{
-    border: 1px solid #ccc;
-    margin: 5px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+.border{
+  border: 1px solid #ccc;
+  margin: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 
-    cursor: pointer;
-  }
+  cursor: pointer;
+}
 
-  .border:hover{
-     /* Escalamos el div en hover */
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+.border:hover{
+   /* Escalamos el div en hover */
+box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 
-  }
- 
+}
 
 
-  .div {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .overlay-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
+
+/* Agrega transiciones para todos los elementos con la clase 'panel-content' */
+.panel-content {
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+
+
+
+.ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.ul li {
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 2px solid #005562;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.ul li:hover {
+  transform: translateY(0);
+}
+
+.ul li h6 {
+  margin: 15px;
+  color: #333;
+}
+
+
+
+
+@keyframes fadeIn {
+  from {
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transform: translateY(20px);
   }
-  
-  .div:hover img {
-    transform: translateX(-100%);
-  }
-  
-  .div:hover .overlay-text {
+  to {
     opacity: 1;
+    transform: translateY(0);
   }
+}
+
+li:nth-child(1) {
+  animation: fadeIn 0.5s 0.2s forwards;
+}
+
+li:nth-child(2) {
+  animation: fadeIn 0.5s 0.4s forwards;
+}
+
+li:nth-child(3) {
+  animation: fadeIn 0.5s 0.6s forwards;
+}

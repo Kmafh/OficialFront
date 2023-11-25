@@ -118,7 +118,7 @@ export class OurVisiterComponent {
         show: false,
       },
       labels: ["Gastos", "Ahorro","Disponible",  ],
-      colors: ["#005562", "#b9f2a1", "#209287", ],
+      colors: ["#005562", "#b9f2a1", "#f3f6f6", ],
       responsive: [
         {
           breakpoint: 767,

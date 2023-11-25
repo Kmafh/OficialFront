@@ -20,6 +20,12 @@ export class TableProjectsComponent {
   pro:any
   constructor( private incomeService: IncomeService,  public dialog: MatDialog, private _bottomSheet: MatBottomSheet, private utilsService: UtilsService
     ) {}
+    currentIndex: number | null = null;
+
+    setProject2(saving: any): void {
+      // Lógica para establecer el índice actual al pasar el ratón por encima del botón
+      this.currentIndex = this.resp.indexOf(saving);
+    }
   openDialog(row:any): void {
     const dialogRef = this.dialog.open(CreateAportDialogComponent, {
       data: {row},

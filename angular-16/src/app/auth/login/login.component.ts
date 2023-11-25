@@ -1,11 +1,11 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import Swal from 'sweetalert2';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { IndexComponent } from 'src/app/index/index.component';
 import { RegisterComponent } from '../register/register.component';
+import { Router } from '@angular/router';
 
 declare const google:any;
 @Component({
@@ -18,6 +18,7 @@ export class LoginComponent implements AfterViewInit{
   color = 'primary';
   checked = false;
   disabled = false;
+  carga= false;
 
   form = this.fb.group({
     email:[localStorage.getItem('email') || '',[Validators.required,Validators.email]],
@@ -87,9 +88,10 @@ export class LoginComponent implements AfterViewInit{
 
 
   login() {
+
     this.userService.login(this.form.value)
     .subscribe( resp => {
-
+      this.carga= resp;
       const remember = this.form.get('remember')!.value;
       const email = this.form.get('email')!.value
       if(remember){
@@ -117,7 +119,7 @@ export class LoginComponent implements AfterViewInit{
         icon: 'success',
         title: `Bienvenido ${this.form.value.email}.`
       }),
-      this.router.navigate(['/preload'])
+      this.router.navigate(['/dashboard'])
       this.onNoClick()
 
     },(err) => {

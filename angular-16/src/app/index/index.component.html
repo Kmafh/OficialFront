@@ -1,32 +1,20 @@
 <div class="main-container bg-white">
-  <!-- ============================================================== -->
-  <!-- Topbar - style you can find in header.scss -->
-  <!-- ============================================================== -->
   <mat-toolbar class="topbar telative">
-    <!-- ============================================================== -->
-    <!-- Logo - style you can find in header.scss -->
-    <!-- ============================================================== -->
     <div class="navbar-header">
       <a class="navbar-brand" href="index.html">
-        <!-- Logo icon --><b>
-          <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-          <!-- Dark Logo icon -->
+        <b>
           <img
             src="../../assets/images/logo-icon.png"
             alt="homepage"
             class="dark-logo"
           />
-          <!-- Light Logo icon -->
           <img
             src="../../assets/images/logo-light-icon.png"
             alt="homepage"
             class="light-logo"
           />
         </b>
-        <!--End Logo icon -->
-        <!-- Logo text -->
         <span class="text-logo-icon" fxShow="false" fxShow.gt-xs>
-          <!-- dark Logo text -->
           <img
             src="../../assets/images/logo-text.png"
             alt="homepage"
@@ -49,9 +37,6 @@
       <mat-icon>menu</mat-icon>
     </button>
 
-    <!-- ============================================================== -->
-    <!-- app header component - style you can find in header.scss / header.component.ts-->
-    <!-- ============================================================== -->
     <div class="d-flex align-items-center ml-auto">
       <button
         mat-icon-button
@@ -64,129 +49,245 @@
       </button>
     </div>
   </mat-toolbar>
-  <div class="carrusel">
-    <app-carrusel></app-carrusel>
+  <div class="carrusel mi-div-oculto">
+    <app-carrusel ></app-carrusel>
+
   </div>
-  <div class="row  bg-white">
+  <div class="carrusel mi-div-oculto2">
+    <app-carrusel [opcion] = true></app-carrusel>
+
+  </div>
+  <div class="row bg-white">
     <div class="col-12 center">
       <h2>¿De que se trata?</h2>
     </div>
   </div>
-  <div class="row  bg-white  center">
-    <div class="col-md-2 rounded border " (mouseenter)="setPanel('mov')" (mouseleave)="setPanel('')" >
-      <div class="row" style="margin-left: 30px;">
-        <div class="col-2 center"><img src="../../assets/images/background/flechas.png" alt="" > </div>
-        <div class="col"><p> <b>Movimientos</b><br><small class="text-verde_2"> ver más ></small></p></div>
-      </div>
-      
-      
-    </div>
-    <div class="col-md-2 rounded border " (mouseenter)="setPanel('aho')">
-      <div class="row" style="margin-left: 30px;">
-        <div class="col-2 center"><img src="../../assets/images/background/hucha.png" alt="" > </div>
-        <div class="col"><p><b> Ahorros</b><br><small class="text-verde_2"> ver más ></small></p></div>
-      </div>
-    </div>
-    <div class="col-md-2 rounded border "  (mouseenter)="setPanel('pro')">
-      <div class="row" style="margin-left: 30px;">
-        <div class="col-2 center"><img src="../../assets/images/background/avion.png" alt="" > </div>
-        <div class="col"><p><b> Proyectos</b><br><small class="text-verde_2"> ver más ></small></p></div>
+  <div class="row bg-white center">
+    <div class="col-md-2 rounded border" (mouseenter)="setPanel('mov')">
+      <div class="row" style="margin-left: 30px">
+        <div class="col-2 center">
+          <img src="../../assets/images/background/flechas.png" alt="" />
+        </div>
+        <div class="col">
+          <p>
+            <b>Movimientos</b><br /><small class="text-verde_2">
+              ver más ></small
+            >
+          </p>
+        </div>
       </div>
     </div>
-    <div class="col-md-2 rounded border "  (mouseenter)="setPanel('per')">
-      <div class="row" style="margin-left: 30px;">
-        <div class="col-2 center"><img src="../../assets/images/background/personal.png" alt="" > </div>
-        <div class="col"><p><b> Datos personales</b><br><small class="text-verde_2"> ver más ></small></p></div>
+    <div class="col-md-2 rounded border" (mouseenter)="setPanel('aho')">
+      <div class="row" style="margin-left: 30px">
+        <div class="col-2 center">
+          <img src="../../assets/images/background/hucha.png" alt="" />
+        </div>
+        <div class="col">
+          <p>
+            <b> Ahorros</b><br /><small class="text-verde_2"> ver más ></small>
+          </p>
+        </div>
       </div>
     </div>
-    
+    <div class="col-md-2 rounded border" (mouseenter)="setPanel('pro')">
+      <div class="row" style="margin-left: 30px">
+        <div class="col-2 center">
+          <img src="../../assets/images/background/avion.png" alt="" />
+        </div>
+        <div class="col">
+          <p>
+            <b> Proyectos</b><br /><small class="text-verde_2">
+              ver más ></small
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2 rounded border" (mouseenter)="setPanel('per')">
+      <div class="row" style="margin-left: 30px">
+        <div class="col-2 center">
+          <img src="../../assets/images/background/personal.png" alt="" />
+        </div>
+        <div class="col">
+          <p>
+            <b> Datos personales</b><br /><small class="text-verde_2">
+              ver más ></small
+            >
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
-<div class="row">
-  
-  <div class="col center rounded border ">
-    <div class="row "  *ngIf="panel==='mov'"  data-aos="fade-right">
-      <div [@slideInOut]="isHovered ? 'out' : 'in'" (mouseenter)="toggleHover()" (mouseleave)="toggleHover()">
-        <img src="../../assets/images/background/ahoindex.png" alt="Imagen" />
-        <div class="overlay-text">
-          <p>Tu texto aquí.</p>
+  <div class="row" style="margin: 50px 10px 10px">
+    <div class="col  rounded">
+      <div class="row">
+        <div class="col-md-4">
+          <div *ngIf="panel === ''" >
+            
+          </div>
+          <div *ngIf="panel === 'mov'" >
+            <ul class="ul">
+              <li>
+                <h6>
+                  Ingresos
+                </h6>
+              </li>
+              <li>
+                <h6>
+                  Gastos
+                </h6>
+              </li>
+            </ul>
+          </div>
+          <div *ngIf="panel === 'aho'" >
+            <ul class="ul">
+              <li>
+                <h6>
+                  Huchasaaaaaaaaaaaaaa
+                </h6>
+              </li>
+              <li>
+                <h6>
+                 Créditosaaaaaaaaa
+                </h6>
+              </li>
+            </ul>
+          </div>
+          <div *ngIf="panel === 'pro'" >
+            <ul class="ul">
+              <li>
+                <h6>
+                  Simplifica el registro y categorización de tus ingresos para una gestión financiera organizada y eficiente.
+                </h6>
+              </li>
+              <li>
+                <h6>
+                  Gestiona tus gastos de manera clara y ordenada. Registra y categoriza tus desembolsos para un control total de tus finanzas familiares.
+                </h6>
+              </li>
+            </ul>
+          </div>
+          <div *ngIf="panel === 'per'" >
+            <ul class="ul">
+              <li>
+                <h6>
+                  Te permite ingresar y categorizar sus ingresos y gastos de
+                  manera organizada.
+                </h6>
+              </li>
+              <li>
+                <h6>
+                  Ofrece gráficos y reportes que muestran de manera clara y
+                  comprensible la distribución de los ingresos y gastos.
+                </h6>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="row "  *ngIf="panel==='aho'"  data-aos="fade-right">
-      <div class="col-4 boring" ><img src="../../assets/images/background/ahoindex.png" alt="" style="margin-top: 20px;" class="rounded"></div>
-      <div class="col-8"> 
-        <div >
-          <ul>
-            <li>
-              <h6 >Te permite ingresar y categorizar sus ingresos y gastos de manera organizada.</h6>
-            </li>
-            <li>
-              <h6 >Ofrece gráficos y reportes que muestran de manera clara y comprensible la distribución de los ingresos y gastos.</h6>
-            </li>
-            <li>
-              <h6 >Permite acceder a un historial completo de transacciones para un análisis detallado.</h6>
-            </li>
-          </ul>
+        <div class="col-4 mi-div-oculto" >
+          <img src="../../assets/images/background/laptop.png" alt="" />
         </div>
-      </div>
-    </div>
-    <div class="row "  *ngIf="panel==='pro'"  data-aos="fade-right">
-      <div class="col-4 boring"  ><img src="../../assets/images/background/proyectos.png" alt="" ></div>
-      <div class="col-8"> 
-        <div >
-          <ul>
-            <li>
-              <h6 >Te permite ingresar y categorizar sus ingresos y gastos de manera organizada.</h6>
-            </li>
-            <li>
-              <h6 >Ofrece gráficos y reportes que muestran de manera clara y comprensible la distribución de los ingresos y gastos.</h6>
-            </li>
-            <li>
-              <h6 >Permite acceder a un historial completo de transacciones para un análisis detallado.</h6>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="row "  *ngIf="panel==='per'"  data-aos="fade-right">
-      <div class="col-4 " ><img src="../../assets/images/background/laptop.png" alt="" class="boring"></div>
-      <div class="col-8"> 
-        <div class="div">
-          <ul>
-            <li>
-              <h6 >Te permite ingresar y categorizar sus ingresos y gastos de manera organizada.</h6>
-            </li>
-            <li>
-              <h6 >Ofrece gráficos y reportes que muestran de manera clara y comprensible la distribución de los ingresos y gastos.</h6>
-            </li>
-            <li>
-              <h6 >Permite acceder a un historial completo de transacciones para un análisis detallado.</h6>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div> 
-</div>
+        <div class="col-md-4 ">
+          <div *ngIf="panel === 'mov'" >
+            <ul class="ul">
+              <li>
+                <h6>
+                  Simplifica el registro y categorización de tus ingresos para una gestión financiera organizada y eficiente.
+                </h6>
+              </li>
+              <li>
+                <h6>
+                  Gestiona tus gastos de manera clara y ordenada. Registra y categoriza tus desembolsos para un control total de tus finanzas familiares.
+                </h6>
+              </li>
+            </ul>
+          </div>
+          <div *ngIf="panel === 'aho'" >
+            <ul class="ul">
+              <li>
+                <h6>
+                  Te permite ingresar y categorizar sus ingresos y gastos de
+                  manera organizada.
+                </h6>
+              </li>
+              <li>
+                <h6>
+                  Ofrece gráficos y reportes que muestran de manera clara y
+                  comprensible la distribución de los ingresos y gastos.
+                </h6>
+              </li>
+            </ul>
+          </div>
+          <div *ngIf="panel === 'pro'">
+            <ul class="ul">
+              <li>
+                <h6>
+                  Te permite ingresar y categorizar sus ingresos y gastos de
+                  manera organizada.
+                </h6>
+              </li>
+              <li>
+                <h6>
+                  Ofrece gráficos y reportes que muestran de manera clara y
+                  comprensible la distribución de los ingresos y gastos.
+                </h6>
+              </li>
+              <li>
+                <h6>
+                  Permite acceder a un historial completo de transacciones para
+                  un análisis detallado.
+                </h6>
+              </li>
+            </ul>
+          </div>
+          <div *ngIf="panel === 'per'">
 
-
+            <ul class="ul">
+              <li>
+                <h6>
+                  Te permite ingresar y categorizar sus ingresos y gastos de
+                  manera organizada.
+                </h6>
+              </li>
+              <li>
+                <h6>
+                  Ofrece gráficos y reportes que muestran de manera clara y
+                  comprensible la distribución de los ingresos y gastos.
+                </h6>
+              </li>
+              <li>
+                <h6>
+                  Permite acceder a un historial completo de transacciones para
+                  un análisis detallado.
+                </h6>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div
     class="menu-container menu"
     *ngIf="showMenu"
     (mouseleave)="showMenu ? (showMenu = false) : (showMenu = true)"
   >
-      <div class="row">
-        <div class="col center">
-          <ul class="lista-horizontal">
-            <li><a href=""><b>Registro</b></a></li>
-            <li><a href=""><b>Utilidades</b></a></li>
-            <li><a href=""><b>Porfolio</b></a></li>
-            <!-- Agrega más elementos según sea necesario -->
-          </ul>
-        </div>
+    <div class="row">
+      <div class="col center">
+        <ul class="lista-horizontal">
+          <li>
+            <a (click)="openDialogRegister()">Registro</a>
+          </li>
+          <li>
+            <a href="">Utilidades</a>
+          </li>
+          <li>
+            <a href="">Porfolio</a>
+          </li>
+          <!-- Agrega más elementos según sea necesario -->
+        </ul>
       </div>
+    </div>
   </div>
-  
- 
 </div>

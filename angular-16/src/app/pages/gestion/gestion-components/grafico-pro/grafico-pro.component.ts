@@ -109,7 +109,7 @@ export class GraficoProComponent {
       chart: {
         type: "donut",
         fontFamily: "Poppins,sans-serif",
-        height: 253,
+        height: 200,
       },
       plotOptions: {
         pie: {

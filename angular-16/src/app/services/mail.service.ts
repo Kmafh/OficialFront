@@ -11,23 +11,24 @@ const endpoint: any = environment.base_url;
 })
 export class MailService {
 
-  constructor(private http: HttpClient,
-    private router: Router,) { }
+  
+  // constructor(private http: HttpClient,
+  //   private router: Router,) { }
 
-  sendEmail(value: any) {
+  // sendEmail(value: any) {
     
-    const token = sessionStorage.getItem('token') || '';
+  //   const token = sessionStorage.getItem('token') || '';
 
-    return this.http.post(`${endpoint}/login/sendMail`,value, {
-      })
-      .pipe(
-        map((resp: any) => {
-          return resp;
-        }),
-        catchError(error => {
-          console.error('Error en la solicitud POST:', error);
-          return of(error,'false'); // devuelve el error como un Observable
-        })
-      );
-  }
+  //   return this.http.post(`${endpoint}/login/sendMail`,value, {
+  //     })
+  //     .pipe(
+  //       map((resp: any) => {
+  //         return resp;
+  //       }),
+  //       catchError(error => {
+  //         console.error('Error en la solicitud POST:', error);
+  //         return of(error,'false'); // devuelve el error como un Observable
+  //       })
+  //     );
+  // }
 }

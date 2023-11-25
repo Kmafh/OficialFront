@@ -449,11 +449,11 @@ export class UtilsService {
     }
   }
   //Email
-  async sendMail(value: any) {
-    this.mailService.sendEmail(value).subscribe((resp) => {
-      console.log(resp);
-    });
-  }
+  // async sendMail(value: any) {
+  //   this.mailService.sendEmail(value).subscribe((resp) => {
+  //     console.log(resp);
+  //   });
+  // }
 
   private _proyecto: any;
   private proyectoSubject = new BehaviorSubject<any>(null);

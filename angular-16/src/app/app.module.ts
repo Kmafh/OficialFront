@@ -1,4 +1,3 @@
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -26,6 +25,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarruselComponent } from './index/components/carrusel/carrusel.component';
 import { DialogInfoComponent } from './index/components/dialog-info/dialog-info.component';
 import { ModalheadComponent } from './layouts/full/header/modalhead/modalhead.component';
+import { MatDialog } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +37,7 @@ import { ModalheadComponent } from './layouts/full/header/modalhead/modalhead.co
     MenuComponent,
     CarruselComponent,
     DialogInfoComponent,
-    ModalheadComponent
+    ModalheadComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,11 +57,12 @@ import { ModalheadComponent } from './layouts/full/header/modalhead/modalhead.co
     NgbModule,
   ],
   providers: [
+    MatDialog,
     {
       provide: LocationStrategy,
-      useClass: PathLocationStrategy
-    }
+      useClass: PathLocationStrategy,
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
